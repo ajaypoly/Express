@@ -1,9 +1,14 @@
 const http = require("http");
+const fs = require("fs");
+const path = require("path");
 
-http
+ const server=http
   .createServer((req, res) => {
-    res.write("THis is node js");
-    res.end();
-    console.log(req.url);
+    res.writeHead(200,{'Context-type':"applicatin"})
   })
-  .listen(3001, () => console.log("server is run"));
+
+
+  const PORT =3001;
+
+
+  server.listen(PORT,console.log(`server is running on ${PORT}`))
